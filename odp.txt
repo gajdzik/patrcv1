@@ -1,0 +1,75 @@
+1. Czym jest kompilator i linker?
+Kompilator jest to program, który zamienia jêzyk w którym piszemu (tutaj c++) na jêzyk maszynowy
+(niektóre kompilatory t³umacz¹ najpierw na jêzyk asemblera, np. zamiana pêtli na goto)
+Linker to program, który ³¹czy m.in. pliki obiektowe i biblioteki statyczne i tworzy np.
+ plik wykonywalny (exe).
+
+2. Co to jest "include guard" lub inaczej "header guard"?
+Jest to "stra¿nik", który sprawdza czy includy by³y ju¿ zainkludowane. 
+Sprawdzanie polega na podaniu na pocz¹tku pliku "ifndef NAZWAHEADERU"
+nastêpnie "#define NAZWAHEADERU" i na koñcu "#endif.
+
+3. Do czego s³u¿y #pragma once?
+#pragma once pomaga tak jak "include guard" w tym, ¿eby nie za³¹czaæ
+kilka razy treœci danego pliku. Dzieje siê to w preprocesorze. W porównaniu
+do "include guard" jest to krótsza dyrektywa.
+
+4. Do czego s³u¿y s³owo kluczowe "auto"?
+S³owo kluczowe "auto" s³u¿y do inteligentnego rozpoznawania typu zmiennej.
+Oznacza to, ¿e nie musimy pisaæ czy zmienna jest typu int czy double, bo
+"auto" po inicjalizacji samo rozpozna czy to int czy double.
+np. auto moja_zmienna = 5 (rozpozna, ¿e to int)
+mp. auto moja_zmienna = 5.34 (rozpozna, ¿e to double)
+
+5. Omów na czym polega programowanie obiektowe?
+W programowaniu obiektowy chodzi o to, ¿e wszystko co piszemy to tworzymy
+jako obiekty (takie jak w rzeczywistoœci), np. obiekt stó³. Taki obiekt
+oprócz tego, ¿e jest obiektem to jeszcze ma swoje "cechy" czyli dane np.
+wysokoœæ, szerokoœæ, kolor (to wszystko jest tak¹ rozszerzon¹ struktur¹).
+Poza tym programowanie obiektowe charakteryzuje siê metodami (zamiast funkcji),
+kontruktorami(które wykonuj¹ siê przy tworzeniu obiektu), destruktorami
+(które sprz¹taj¹ przy usuwaniu obiektu), dziedziczeniem i polimorfizmem.
+Celem programowania obiektowego jest przede wszystkim ³atwiejsze
+pisanie w zespole oraz szybsze tworzenie kodu.
+
+6. Omów wp³yw modyfikatorów dostêpu u¿ytych podczas dziedziczenia na
+widocznoœæ pól i metod.
+Mamy 3 modyfikatory (w c++) tj. public, protected, private.
+Dziedziczenie publiczne oznacza, ¿e rzeczy publiczne potomka bêd¹ u nas
+te¿ publiczne, a rzeczy protected potomka bêd¹ u nas dalej protected.
+Dziedziczenie protected oznacza, ¿e rzeczy publiczne i protected potomka
+bêd¹ u nas protected.
+Dziedziczenie private polega na tym, ¿e rzeczy publiczne i protected potomka
+bêd¹ u nas jako private.
+Nie mo¿na dziedziczyæ rzeczy private.
+
+7. Czym ró¿ni siê metoda "virtual" od "pure virtual"?
+
+Metoda wirtualna to taka metoda, której treœæ mo¿na przes³oniæ w klasie
+dziedziczonej metod¹ o tej samej nazwie. Wykonywalna jest metoda, która
+odpowiada danemu typowi obiektu.
+Metoda pure virtual to metoda, któr¹ trzeba zainicjalizowaæ, jeœli
+klasa dziedzicz¹ce nie chce byæ klas¹ abstraktycjn¹. Je¿eli w klasie
+istnieje chocia¿ jedna metoda pure virtual to klasa jest abstrakcyjna .
+(nie mo¿e mieæ obiektów)
+
+8. Co to jest "vtable"?
+vtable to mechanizm w programowaniu do szybkiego ustawiania wskaŸników na
+metody virtualne.
+
+9. Opisz ró¿nicê pomiêdzy destruktorem a wirtualnym destruktorem. Jaki 
+nale¿y stosowaæ czêœciej i dlaczego?
+Jeœli bêdziemy korzystaæ z publicznego dziedziczenia to powinniœmy stosowaæ
+destruktor wirtualny. Zapobiegamy wtedy wyciekowi pamiêci i nieobliczalnemu
+zachowaniu programu. Gdy wywo³amy zwyk³y destruktor to bêdzie usuwa³ wskaŸnik,
+który odpowiada typowi wskaŸnika, a nie ten, który odpowiada rzeczywistemu
+typowi obiektu. Gdy wywo³amy wirtualny destruktor to wywo³amy destruktor dla
+ca³ego obiektu (najpierw ten co dziedziczy, póŸniej ten bazowy). Tak¿e lepiej
+stosowaæ destruktor wirtualny dla bezpieczeñstwa.
+
+
+
+
+
+
+
