@@ -1,0 +1,75 @@
+1. Czym jest stos (stack), czym jest sterta (heap)?
+Stos i sterta (kopiec) to struktury danych. Stos charakteryzuje siê buforem
+typu LIFO (ostatni wchodz¹cy jest pierwszym na wyjœciu.  Operacja push dodaje
+element na wierzcho³ek stosu, a operacja pop zdejmujê element z wierzcho³ka. 
+Empty sprawdza czy stos jest pusty, a size zwraca liczbe elementów stosu.
+Sterta opiera siê na drzewie, w którym potomkowie s¹ zale¿ni s¹ od rodzica 
+(np. potomkowie maj¹ wartoœci mniejsze od rodzica). Jest wiele rodzajów stosów,
+m. in. binarny, min-max.
+
+2. Czym jest wskaŸnik?
+WskaŸnik to specjalny rodzaj zmiennej, w której zapisywany jest adres w pamiêci 
+komputera. Deklaruje siê wskaŸnik poprzez "*" np. int *ptr;
+
+3. Czym jest wskaŸnik na wskaŸnik i jakie mo¿e mieæ zastosowania?
+Jest to wskaŸnik, który wskazuje na wskaŸnik, który wskazuje zmienna (np.
+int x=5, int *y=&x, int **z=&y) WskaŸnik na wskaŸnik mo¿e byæ u¿yty do 
+dynamicznego alokowanie pamiêci np. tablicy, która ma w pierwszym wierszu 
+cztery kolumny, a w drugim ju¿ tylko dwie. Takie wskaŸniki slu¿¹ do szybkiego
+przemieszczania siê pomiêdzy danymi oraz przyœpieszaj¹ pracê, bo komputer
+dostaje od razu adres zmiennej i nie musi za ka¿dym razem jej szukaæ.
+
+4. Na czym polega arytmetyka wskaŸników?
+Arytmetyka wskaŸników, polega na tym, ¿e mo¿na dodaj¹c lub odejmuj¹c w 
+wskaŸnikach to przesuwamy siê po adresach (w zale¿noœci od typu wskaŸników, to
+np. +1 przesunie adres o 4 do przodu). Dodaj¹c lub odejmuj¹c wskaŸniki od 
+siebie dostaniemy liczbe o ile siê ró¿ni¹ oba adresy (np. o ile pól w tablicy
+siê ró¿ni¹, a nie o ile adresu siê ró¿ni¹).
+
+5. Omów konwersje typów.
+Jeœli mówimy o stringu to trzeba u¿ywa¿ cudzys³owia (z="test"), jeœli mówimy o 
+char to u¿ywamy (y='A'), jeœli mówimy o int to piszemy bez niczego (x=5). 
+Np. jeœli zrobimy x=y to otrzymamy (65) poniewa¿ 'A' w ASCII ma nr 65 (a int mo¿e 
+mieæ tylko liczby).
+
+6. Omów rzutowanie typów.
+Rzutowanie jest to bezpieczna zamiana jednego typu na drugi typ. Np. zamiana
+double na int wygl¹da tak int b= (int)zmienna_double.
+
+7. Wymieñ sposoby rzutowania typów w C++
+ Istnieje wiele rzutowañ standardowych (n. z int na double) i np. rzutowanie 
+const_cast pozwala zrzutowaæ zmienn¹, która zmienn¹, która nie ma const ani 
+volatile przed typem. Static_cast to rzutowanie w którym obiekt, musi byæ 
+znany w momencie kompilacji. Dynamic_cast rzutowanie wskaŸników na obiekty. 
+Reinterpret_cast rzutowanie umo¿liwiaj¹ce zmienianie znaczenia bitów.
+
+8. Omów ró¿nicê pomiêdzy "while" a "do ... while".
+Ró¿nica pomiêdzy while a do while jest taka, ¿e do while wykona siê zawsze 
+co najmniej raz i dopiero póŸniej sprawdzi warunek stopu, a while najpierw 
+sprawdzi warunek stopu, wiêc mo¿e siê wykonaæ 0 razy.
+
+9. Opisz ró¿nicê pomiêdzy statyczn¹ a dynamiczn¹ alokacj¹ pamiêci.
+Dynamiczna alokacja pamiêci pozwala nam np. na stworzenie tablicy z dwoma 
+wierszamia, gdzie w pierwszym wierszu s¹ cztery kolumny a w drugim tylko dwie.
+Dynamiczne alokowanie pamiêci zajmuje mniej pamiêci, gdy¿ mo¿na w dowolnym 
+momence pamiêæ zwolniæ. Przy dynamicznej alokacji u¿ywamy poleceñ "new" do 
+alokowania i "delete" do zwalniania pamiêci. Statyczne przypisywanie 
+charakteryzuje siê tym, ¿e ju¿ przy kompilacji musimy wiedzieæ ile 
+zarezerwowaæ pamiêci.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
