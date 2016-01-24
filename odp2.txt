@@ -1,11 +1,11 @@
 1. Czym jest stos (stack), czym jest sterta (heap)?
-Stos i sterta (kopiec) to struktury danych. Stos charakteryzuje siê buforem
-typu LIFO (ostatni wchodz¹cy jest pierwszym na wyjœciu.  Operacja push dodaje
-element na wierzcho³ek stosu, a operacja pop zdejmujê element z wierzcho³ka. 
-Empty sprawdza czy stos jest pusty, a size zwraca liczbe elementów stosu.
-Sterta opiera siê na drzewie, w którym potomkowie s¹ zale¿ni s¹ od rodzica 
-(np. potomkowie maj¹ wartoœci mniejsze od rodzica). Jest wiele rodzajów stosów,
-m. in. binarny, min-max.
+Stos to obszar pamiêci w przestrzeni adresowej programu. Stos jest obs³ugiwany
+automatycznie i charakteryzuje siê LIFO (ostatni przyszed³, wiêc jako pierwszy 
+wychodzi). Na stosie przechowywane s¹ zmienne lokalne, argumenty wywo³ania 
+funkcji, wartoœæ zwracana przez funkcjê, adres wywo³ania funkcji.
+Sterta to obszar pamiêci udostêpniany przez system operacyjny wszystkim 
+dzia³aj¹cym programom. Na stercie przechowywane s¹ dynamicznie tworzone 
+struktury danych, dynamicznie przydzielane obszary pamiêci.
 
 2. Czym jest wskaŸnik?
 WskaŸnik to specjalny rodzaj zmiennej, w której zapisywany jest adres w pamiêci 
@@ -27,10 +27,9 @@ siebie dostaniemy liczbe o ile siê ró¿ni¹ oba adresy (np. o ile pól w tablicy
 siê ró¿ni¹, a nie o ile adresu siê ró¿ni¹).
 
 5. Omów konwersje typów.
-Jeœli mówimy o stringu to trzeba u¿ywa¿ cudzys³owia (z="test"), jeœli mówimy o 
-char to u¿ywamy (y='A'), jeœli mówimy o int to piszemy bez niczego (x=5). 
-Np. jeœli zrobimy x=y to otrzymamy (65) poniewa¿ 'A' w ASCII ma nr 65 (a int mo¿e 
-mieæ tylko liczby).
+Konwercja typów to zmiana typu zmiennej na inny. Przy zmianie typu przewa¿nie 
+tracimy jak¹œ czêœæ danch, np. double x=5,678; int y=z; W wyniku tego w 'y' 
+bêdziemy mieli tylko '5', bo int nie przechowuje wartoœci po przecinku.
 
 6. Omów rzutowanie typów.
 Rzutowanie jest to bezpieczna zamiana jednego typu na drugi typ. Np. zamiana
@@ -49,27 +48,11 @@ co najmniej raz i dopiero póŸniej sprawdzi warunek stopu, a while najpierw
 sprawdzi warunek stopu, wiêc mo¿e siê wykonaæ 0 razy.
 
 9. Opisz ró¿nicê pomiêdzy statyczn¹ a dynamiczn¹ alokacj¹ pamiêci.
-Dynamiczna alokacja pamiêci pozwala nam np. na stworzenie tablicy z dwoma 
-wierszamia, gdzie w pierwszym wierszu s¹ cztery kolumny a w drugim tylko dwie.
-Dynamiczne alokowanie pamiêci zajmuje mniej pamiêci, gdy¿ mo¿na w dowolnym 
-momence pamiêæ zwolniæ. Przy dynamicznej alokacji u¿ywamy poleceñ "new" do 
-alokowania i "delete" do zwalniania pamiêci. Statyczne przypisywanie 
-charakteryzuje siê tym, ¿e ju¿ przy kompilacji musimy wiedzieæ ile 
-zarezerwowaæ pamiêci.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Statyczne alokacja pamiêci wykonuje siê w momencie kompilacji kodu Ÿród³owego. 
+Charakteryzuje siê prostym zapisem w kodzie oraz ³atw¹ obs³ug¹ statycznych 
+obszarów pamiêci. Pamiêæ zwalniana jest dopiero w momencie zakoñczenia 
+programu, a przydzielanie pamiêci jest nadmierna, gdy alokacja w 
+programie jest zmiennej jest zmienna.
+Dynamiczna alokacja wykonuje siê w trakcie dzia³ania programu. Charakteryzuje
+siê elastycznym okreœlaniem zapotrzebowania na pamiêæ i mo¿liwoœcia zwolnienia
+niewykorzystywanej ju¿ pamiêci. Mo¿e wyst¹piæ zjawisko "wycieku pamiêci".
