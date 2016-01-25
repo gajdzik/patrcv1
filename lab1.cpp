@@ -59,7 +59,30 @@ int main()
 {
 	Square second;
 	second.get();
+	
+	//samo przydziela typ c++11 standard
 	auto i = 15;
+	
+	
+
+	//pêtla for oparta na zakresie c++11 standard
+	cout << "petla for oparta na zakresie (c++11)" << endl;
+	int my_table[3] = { 1,2,3 };
+	for (int &x : my_table)
+	{
+		cout << x << endl;
+	}
+
+	// jawna deklaracja u¿ucia domyœlnego kontruktora c++11 standard
+	struct SomeType
+	{
+		SomeType() = default; //Domyœlny konstruktor jest jawnie okreœlony.
+	};
+
+	//przedrostek constexp tworzy sta³e wyra¿enie, które mo¿e byæ optymalizowane podczas kompilacji c++11 standard
+	constexpr double silaGrawitacji = 9.8*1/1;
+
+	
 	getchar();
 	getchar();
 
