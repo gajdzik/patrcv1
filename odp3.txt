@@ -1,0 +1,28 @@
+1. Co to jest przestrzeñ barw RGB?
+Przestrzeñ barw RGB (Red, Green, Blue) jest modelem opisu wspó³rzêdnych koloru.
+Polega na zmieszaniu trzech podstawowych kolorów, aby otrzymaæ nowe. 
+Najni¿sze wartoœci to czerñ(0) a najwy¿sze to biel(255). Zapis koloru w RGB : 
+najczêœciej 8 bitów na ka¿d¹ sk³adow¹ z barw (razem 24 bity), gdzie ka¿da 
+przyjmuje wartoœci od 0 do 255. Obliczanie numeru koloru : R*65536 + G*256 + B.
+
+2. Co to jest przestrzeñ barw HSV?
+Przestrzeñ barw HSV (Hue Saturation Value) to model opisuj¹cy wszystkie barwy 
+jako œwiat³o pochodz¹ce z oœwietlenia, gdzie czêœæ widma zostaje wch³oniêta, a
+czêœæ odbita od oœwietlanych przedmiotów. Model rozpatrywany jest jako sto¿ek 
+o podstawie w kole barw. Centrum barwy czerwonej odpowiada 0 (360) stopni,
+zielonej 120 stopni a niebieskiej 240 stopni. Reszta barw jest roz³o¿ona 
+pomiêdzy nimi. H - odcieñ œwiat³a podany jako k¹t, S - nasycenie koloru oraz 
+V jako moc œwiat³a bia³ego (wysokoœæ sto¿ka).
+
+3. Co to jest filtr 2D?
+Jest to filtr, który ka¿dy piksel obrazka przekszta³ca przez dwu wymiarowy
+(przewa¿nie 3x3) filtr, który na podstawie wartoœci s¹siadów tego piksela 
+wylicza piksel wynikowy. Istnieje wiele filtrów 2D (np. Gaussa).
+
+4. Jak wygl¹da reprezentacja obrazu w pamiêci?
+Obraz w pamiêci jest opisany jako setki pikseli, gdzie ka¿dy piksel mo¿e 
+zawieraæ od 1 bitu (0 lub 1) przez 1 bajt (0-255) do jeszcze wiêcej. W RGB 
+ka¿dy piksel to 3 bajkty (ka¿dy na jeden kolor : Red Green Blue). Rozszerzenie
+obrazka œwiadczy o tym jak piksele odczytywaæ. Do reprezentacji obrazu w 
+pamiêci u¿ywa siê np. bitmapy (formaty które u¿ywaj¹ bitmapy to : bmp, dif,
+jpeg/0
