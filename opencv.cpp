@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	Sobel(gaussian_image, sobely, ddepth, 0, 1, 3, scale, delta, BORDER_DEFAULT);
 	convertScaleAbs(sobely, sobely);
 	addWeighted(sobelx, 0.5, sobely, 0.5, 0, sobel_image);
-	imwrite("sobel.png", gaussian_image);
+	imwrite("sobel.png", sobel_image);
 
 
 	return 0;
